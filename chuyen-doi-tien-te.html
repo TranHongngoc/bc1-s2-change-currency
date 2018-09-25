@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    Amount:<input type="text" id="amount">
+    From Currency:
+    <select id="fromCurrency">
+        <option value="USD">USD</option>
+        <option value="Euro">Euro</option>
+    </select>
+    VND: <input type="text" id="VND">
+    <button type="submit" id="convert" onclick="convert()">Convert</button>
+<script>
+    function convert() {
+        var typeAmount = parseInt(document.getElementById("amount").value);
+        var fromCurrency = document.getElementById("fromCurrency").value;
+       // var output = document.getElementById("VND").value;
+        const ExchangeRateUSD = 23000;
+        const ExChangeRateEuro = 27000;
+        var result;
+
+        if (fromCurrency === 'USD') {
+            result = (typeAmount * ExchangeRateUSD);
+        }
+        else if (fromCurrency === 'Euro'){
+            result = (typeAmount * ExChangeRateEuro);
+        }
+        alert(result);
+    }
+</script>
+</body>
+</html>
